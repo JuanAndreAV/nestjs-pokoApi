@@ -1,0 +1,18 @@
+html, body {
+    padding: 20px;
+    background-color: rgb(204, 189, 189)
+}
+
+h1, h2 {
+    font-size: medium;
+    color: rgb(59, 36, 78);
+    text-align: center;
+    
+}
+b{
+    color: brown;
+}
+p, ol, li {
+    text-align: center;
+    list-style-position: inside;
+}

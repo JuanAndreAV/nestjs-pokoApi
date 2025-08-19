@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title></title>
+</head>
+<body>
+    <h1>Este es mi sitio desde Nest</h1>
+    <h2>Servir contenido estático:</h2>
+    <ol>
+        <li>instalar: npm install --save @nestjs/serve-static</li>
+        <li>import { ServeStaticModule } from '@nestjs/serve-static';
+            import { join } from 'path';</li>
+        <li>En Module imports: [ <b>ServeStaticModule.forRoot</b>({rootPath: join(__dirname,'..','public'),})]</li>
+
+    </ol>
+</body>
+</html>
