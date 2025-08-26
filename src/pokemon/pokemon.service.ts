@@ -7,7 +7,7 @@ import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
 export class PokemonService {
-  constructor(@InjectModel(Pokemon.name) private readonly pokemonModel: Model<Pokemon>) {}
+  constructor(@InjectModel(Pokemon.name) private readonly pokemonModel: Model<Pokemon> ) {}
     
   
   async create(createPokemonDto: CreatePokemonDto) {
@@ -68,6 +68,7 @@ export class PokemonService {
 async  remove(id: string) {
     // const pokemon = await this.findOne(id);
     // await pokemon.deleteOne()
+    //const result = await this.pokemonModel.findByIdAndDelete(id)
     const {deletedCount} = await this.pokemonModel.deleteOne({_id: id})
     if(deletedCount === 0) throw new BadRequestException(`Pokemon with id: ${id} not found`)
     return;
@@ -79,5 +80,9 @@ async  remove(id: string) {
       }
       console.log(error)
       throw new InternalServerErrorException('Can not create a Pokemon')
+  }
+
+  async pokeSeed(createPokemonDto: CreatePokemonDto){
+    await this.create(createPokemonDto);
   }
 }
